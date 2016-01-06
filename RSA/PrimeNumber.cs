@@ -11,18 +11,11 @@ namespace RSA {
             generateNumber();
         }
 
-        private BigInteger getRandom() {
-            string s = string.Empty;
-            for (int i = 0; i < SIZE; i++)
-                s = string.Concat(s, rnd.Next(10).ToString());
-            return BigInteger.Parse(s);
-        }
-
         private void generateNumber() {
             BigInteger nr;
 
             do {
-                nr = getRandom();
+                nr = BigIntegerRandom.getRandom(SIZE, rnd);
             } while (!bigIntIsPrime(nr));
             prime = nr;
         }
