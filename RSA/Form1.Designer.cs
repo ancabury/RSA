@@ -49,6 +49,8 @@
             this.tbxMessage.Name = "tbxMessage";
             this.tbxMessage.Size = new System.Drawing.Size(318, 322);
             this.tbxMessage.TabIndex = 1;
+            this.tbxMessage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbxMessage_MouseClick);
+            this.tbxMessage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxMessage_KeyPress);
             // 
             // tbxEncryption
             // 
@@ -57,6 +59,8 @@
             this.tbxEncryption.Name = "tbxEncryption";
             this.tbxEncryption.Size = new System.Drawing.Size(318, 322);
             this.tbxEncryption.TabIndex = 2;
+            this.tbxEncryption.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbxEncryption_MouseClick);
+            this.tbxEncryption.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxEncryption_KeyPress);
             // 
             // label1
             // 
@@ -77,6 +81,7 @@
             this.btnEncrypt.TabIndex = 4;
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // btnDecrypt
             // 
@@ -86,6 +91,7 @@
             this.btnDecrypt.TabIndex = 5;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // Form1
             // 

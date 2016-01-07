@@ -4,7 +4,7 @@ using System.Numerics;
 namespace RSA {
     public class PrimeNumber {
         public BigInteger prime { get; set; }
-        private const int SIZE = 5;
+        private const int SIZE = 3;
         Random rnd;
         public PrimeNumber(Random rnd) {
             this.rnd = rnd;
@@ -23,6 +23,8 @@ namespace RSA {
         private bool bigIntIsPrime(BigInteger n) {
             bool isPrime = true;
             int k = 3;
+            if (n % 2 == 0)
+                return false;
 
             BigInteger previousN = n - 1, t = 0;
             int s = 1;
