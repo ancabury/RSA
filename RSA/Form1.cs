@@ -74,7 +74,7 @@ namespace RSA {
                 for(int i =0;i<message.Length;i = i + K) {
                     numerical_eq[index++] = SUM(message.Substring(i), K);
                 }
-                string cipher = getText(encrypt(numerical_eq), K);
+                string cipher = getText(encrypt(numerical_eq), L);
                 tbxEncryption.Text = cipher;
             }
         }
@@ -90,10 +90,10 @@ namespace RSA {
             StringBuilder text = new StringBuilder();
             foreach (BigInteger nr in arr) {
                 BigInteger num = nr;
-                for (int i = size; i >= 0; i--) {
+                for (int i = size - 1; i >= 0; i--) {
                     BigInteger x = num / Convert.ToInt32(Math.Pow(27, i));
-                    if (x == 0 && size == L) //decryption
-                        continue;
+                    //if (x == 0 && size == L) //decryption
+                      //  continue;
                     num -= Convert.ToInt32(Math.Pow(27, i)) * x;
                     text.Append(alphabet[(int) x]);
                 }
@@ -145,7 +145,7 @@ namespace RSA {
                 for (int i = 0; i < tbxEncryption.Text.Length; i = i + L) {
                     numerical_eq[index++] = SUM(tbxEncryption.Text.Substring(i), L);
                 }
-                string message = getText(decrypt(numerical_eq), L);
+                string message = getText(decrypt(numerical_eq), K);
                 tbxMessage.Text = message;
             }
         }
